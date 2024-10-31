@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  song-postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
